@@ -1,5 +1,6 @@
-var width = 320,
-height = 480,
+var width = ( 320 < window.innerWidth ) ?320 :window.innerWidth,
+height = ( 480 < window.innerHeight ) ?480 :window.innerHeight,
+
 gLoop,
 points = 0,
 state = true,
@@ -162,28 +163,28 @@ platforms[ind] = new Platform(Math.random() * (width - platformWidth), platform.
 
 that.jumpSpeed--;
 if (that.jumpSpeed === 0) {
-that.isJumping = false;
-that.isFalling = true;
-that.fallSpeed = 1;
+    that.isJumping = false;
+    that.isFalling = true;
+    that.fallSpeed = 1;
 }
 
 };
 
 that.fallStop = function(){
-that.isFalling = false;
-that.fallSpeed = 0;
-that.jump();	
+    that.isFalling = false;
+    that.fallSpeed = 0;
+    that.jump();	
 };
 
 that.checkFall = function(){
 if (that.Y < height - that.height) {
-that.setPosition(that.X, that.Y + that.fallSpeed);
-that.fallSpeed++;
+    that.setPosition(that.X, that.Y + that.fallSpeed);
+    that.fallSpeed++;
 } else {
 if (points === 0)
-that.fallStop();
+    that.fallStop();
 else
-GameOver();
+    GameOver();
 }
 };
 
@@ -219,21 +220,21 @@ that.Y = y;
 that.interval = 0;
 that.draw = function(){
 try {
-ctx.drawImage(that.image, 0, that.height * that.actualFrame, that.width, that.height, that.X, that.Y, that.width, that.height);
+    ctx.drawImage(that.image, 0, that.height * that.actualFrame, that.width, that.height, that.X, that.Y, that.width, that.height);
 }
 catch (e) {
 };
 
 if (that.interval === 4 ) {
 if (that.actualFrame === that.frames) {
-that.actualFrame = 0;
+    that.actualFrame = 0;
 }
 else {
-that.actualFrame++;
+    that.actualFrame++;
 }
-that.interval = 0;
+    that.interval = 0;
 }
-that.interval++;	
+    that.interval++;	
 };
 })();
 
@@ -311,8 +312,6 @@ player.fallStop();
 player.jumpSpeed = 50;
 };
 }
-
-
 
 that.x = ~~ x;
 that.y = y;
@@ -400,7 +399,7 @@ ctx.fillText("Pos:" + x, 10, height-30);
 if (state)
 gLoop = setTimeout(GameLoop, 1000 / 50);
 };
-
+ 
 var GameOver = function(){
 state = false;
 clearTimeout(gLoop);
@@ -412,7 +411,25 @@ ctx.font = "10pt Arial";
 ctx.fillText("GAME OVER", width / 2 - 60, height / 2 - 50);
 ctx.fillText("YOUR RESULT:" + points, width / 2 - 60, height / 2 - 30);
 }, 100);
+ //Replay();
 
+};
+
+var Replay = function()
+{
+    var that = this;
+    that.image = new Image();
+    that.image.src = "angel.png";
+
+    that.width = 10;
+//width of the single frame
+    that.height = 10;
+//height of the single frame
+
+    that.X = 0;
+    that.Y = 0;
+   
+    ctx.drawImage(that.image, 0, 0, that.width, that.height, that.X, that.Y, that.width, height / 2 - 100);
 };
 
 GameLoop();
