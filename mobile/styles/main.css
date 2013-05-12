@@ -43,6 +43,10 @@ body {
     display : block;
 }
 
+#game-over {
+    text-align : center;
+    padding-top : 2.5em;
+}
 
 #splash-screen {
     text-align : center;
@@ -194,4 +198,14 @@ ul.menu li button:active {
     width : 1em;
     height : 1em;
     background-color : rgba(225,235,255,0.15);
+}
+
+/* Game over styles */
+#game-over.menu {
+    padding-top : 1em;
+    text-align : center;
+}
+
+ul.menu li {
+    margin : 0.8em 0;
 }

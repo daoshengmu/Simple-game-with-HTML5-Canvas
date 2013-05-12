@@ -9,7 +9,7 @@ jewel.screens["splash-screen"] = (function() {
         function checkProgress() {
             var p = getLoadProgress() * 100;
             $(".indicator",scr)[0].style.width = p + "%";
-            if (p == 100) {
+            if (p === 100) {
                 $(".continue",scr)[0].style.display = "block";
                 dom.bind(scr, "click", function() {
                     jewel.game.showScreen("main-menu");

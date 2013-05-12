@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="3">
         <file>
             <url>scripts/screen.game.js</url>
             <bookmark id="2">
                 <name/>
-                <line>263</line>
+                <line>315</line>
                 <key/>
             </bookmark>
             <bookmark id="1">
                 <name/>
-                <line>287</line>
+                <line>340</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>scripts/display.canvas.js</url>
+            <bookmark id="3">
+                <name/>
+                <line>168</line>
                 <key/>
             </bookmark>
         </file>

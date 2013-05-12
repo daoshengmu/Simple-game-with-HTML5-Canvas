@@ -101,6 +101,7 @@ if (Modernizr.standalone) {
         load : [
             "loader!scripts/screen.main-menu.js",
             "loader!scripts/screen.game.js",
+            "loader!scripts/screen.gameover.js",
             "loader!images/jewels"
                 + jewel.settings.jewelSize + ".png",
             "loader!images/angel.png"

@@ -7,6 +7,7 @@ jewel.display = (function() {
         jewels,
         width,
         height,
+        cursor,
         firstRun = true;
 
     function createBackground() {
@@ -91,6 +92,12 @@ jewel.display = (function() {
 
         boardElement.appendChild(canvas);
         boardElement.appendChild(createBackground());
+        
+         cursor = {
+            x : 0,
+            y : 0,
+            selected : false
+        };
     }
 
 //    function drawJewel(type, x, y) {
@@ -146,14 +153,22 @@ jewel.display = (function() {
         , player.height, player.X, player.Y, player.width, player.height);
     }
 
-    function gameOver( points, width, height )
+    function playAgain( againBtn )
     {
-        clear();
-        ctx.fillStyle = "Black";
-        ctx.font = "10pt Arial";
-        ctx.fillText("GAME OVER", width / 2 - 60, height / 2 - 50);
-        ctx.fillText("YOUR RESULT:" + points, width / 2 - 60, height / 2 - 30);       
-    }
+      //  var againBtn.image = jewel.images["images/angel.png"];
+       ctx.drawImage( againBtn.image, 0, againBtn.height * againBtn.actualFrame, againBtn.width
+        , againBtn.height, againBtn.X, againBtn.height, againBtn.width, againBtn.height);
+    }  // coordinate has wired problem
+//
+//    function gameOver( points, width, height, againBtn )
+//    {
+//        clear();
+//        ctx.fillStyle = "Black";
+//        ctx.font = "10pt Arial";
+//        ctx.fillText("GAME OVER", width / 2 - 60, height / 2 - 50);
+//        ctx.fillText("YOUR RESULT:" + points, width / 2 - 60, height / 2 - 30);             
+//        playAgain( againBtn );
+//    }
     
     function redraw( circles, platforms, player, callback) {
 //        var x, y;
@@ -181,7 +196,6 @@ jewel.display = (function() {
 
     return {
         initialize : initialize,
-        redraw : redraw,
-        gameOver : gameOver
+        redraw : redraw    
     };
 })();
