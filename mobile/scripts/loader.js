@@ -12,10 +12,10 @@ var jewel = {
 window.addEventListener("load", function() {
 
 // determine jewel size
-var jewelProto = document.getElementById("jewel-proto"),
+var jewelProto = document.getElementById("mario-proto"),
     rect = jewelProto.getBoundingClientRect();
 
-jewel.settings.jewelSize = rect.width;
+jewel.settings.marioSize = rect.width;
 
 
 Modernizr.addTest("standalone", function() {
@@ -103,7 +103,7 @@ if (Modernizr.standalone) {
             "loader!scripts/screen.game.js",
             "loader!scripts/screen.gameover.js",
             "loader!images/jewels"
-                + jewel.settings.jewelSize + ".png",
+                + jewel.settings.marioSize + ".png",
             "loader!images/angel.png"
         ]
     }

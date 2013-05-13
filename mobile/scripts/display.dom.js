@@ -2,7 +2,7 @@ jewel.display = (function() {
     var dom = jewel.dom,
         $ = dom.$,
         cols, rows,
-        jewelSize,
+        marioSize,
         firstRun = true,
         jewelSprites;
 
@@ -31,7 +31,7 @@ jewel.display = (function() {
 
         cols = jewel.settings.cols;
         rows = jewel.settings.rows;
-        jewelSize = jewel.settings.jewelSize;
+        marioSize = jewel.settings.marioSize;
         jewelSprites = [];
 
         for (x=0;x<cols;x++) {
@@ -42,7 +42,7 @@ jewel.display = (function() {
                 sprite.style.left = x + "em";
                 sprite.style.top = y + "em";
                 sprite.style.backgroundImage =
-                    "url(images/jewels" + jewelSize + ".png)";
+                    "url(images/jewels" + marioSize + ".png)";
                 sprite.style.backgroundSize =
                      (jewel.settings.numJewelTypes * 100) + "%";
                 jewelSprites[x][y] = sprite;

@@ -19,11 +19,11 @@ body {
     color : rgb(200,200,100);
 }
 
-.jewel-size {
+.mario-size {
     font-size : 40px;
 }
 
-#jewel-proto {
+#mario-proto {
     position : absolute;
     width : 1em;
     height : 1em;

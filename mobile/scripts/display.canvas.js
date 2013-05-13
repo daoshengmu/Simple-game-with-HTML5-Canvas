@@ -3,7 +3,7 @@ jewel.display = (function() {
         $ = dom.$,
         canvas, ctx,
         cols, rows,
-        jewelSize,
+        marioSize,
         jewels,
         width,
         height,
@@ -82,13 +82,13 @@ jewel.display = (function() {
 
         cols = jewel.settings.cols;
         rows = jewel.settings.rows;
-        jewelSize = jewel.settings.jewelSize;
+        marioSize = jewel.settings.marioSize;
 
         canvas = document.createElement("canvas");
         ctx = canvas.getContext("2d");
         dom.addClass(canvas, "board");
-        canvas.width = cols * jewelSize;
-        canvas.height = rows * jewelSize;
+        canvas.width = cols * marioSize;
+        canvas.height = rows * marioSize;
 
         boardElement.appendChild(canvas);
         boardElement.appendChild(createBackground());
