@@ -202,6 +202,32 @@ ul.menu li button:active {
     background-color : rgba(225,235,255,0.15);
 }
 
+/* High score */
+#hiscore h2 {
+    margin-top : 0.25em;
+    font-size : 1.25em;
+}
+
+#hiscore ol.score-list {
+    font-size : 0.65em;
+    width : 75%;
+    margin : 0 10%;
+}
+
+#hiscore ol.score-list li {
+    width : 100%;
+}
+
+#hiscore ol.score-list li span:nth-child(1) {
+    display : inline-block;
+    width : 70%;
+}
+#hiscore ol.score-list li span:nth-child(2) {
+    display : inline-block;
+    width : 30%;
+    text-align : center;
+}
+
 /* Game over styles */
 #game-over {
     text-align : center;
@@ -224,4 +250,15 @@ ul.menu li button:active {
 
 ul.menu li {
     margin : 0.8em 0;
+}
+
+.screen footer button {
+    margin-left : 0.25em;
+    padding : 0 0.75em;
+    font-family : Geo, sans-serif;
+    font-size : 0.5em;
+    color : rgba(255,255,0,0.5);
+    background : rgb(10,20,0);
+    border : 1px solid rgba(255,255,0,0.5);
+    border-radius : 0.2em;
 }

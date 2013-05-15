@@ -67,6 +67,10 @@ function getLoadProgress() {
 // loading stage 1
 Modernizr.load([
 { 
+    test : Modernizr.localstorage,
+    yep : "scripts/storage.js",
+    nope : "scripts/storage.cookie.js"
+}, {
     load : [
         "scripts/sizzle.js",
         "scripts/dom.js",
@@ -94,8 +98,7 @@ if (Modernizr.standalone) {
     Modernizr.load([
     {
         test : Modernizr.canvas,
-        yep : "loader!scripts/display.canvas.js"//,
-      //  nope : "loader!scripts/display.dom.js"
+        yep : "loader!scripts/display.canvas.js"
     },{
         test : Modernizr.webworkers,
         yep : [
@@ -109,8 +112,7 @@ if (Modernizr.standalone) {
             "loader!scripts/screen.game.js",
             "loader!scripts/screen.gameover.js",
             "loader!scripts/screen.about.js",
-        //    "loader!images/jewels"
-         //       + jewel.settings.marioSize + ".png",
+            "loader!scripts/screen.hiscore.js",
             "loader!images/angel.png"
         ]
     }
