@@ -25,7 +25,7 @@ jewel.settings.platformWidth = platform.width;
 jewel.settings.platformHeight = platform.height;
 
 Modernizr.addTest("standalone", function() {
-    return (window.navigator.standalone != false);
+    return (window.navigator.standalone !== false);
 });
 
 // extend yepnope with preloading

@@ -5,12 +5,12 @@
             <url>scripts/screen.game.js</url>
             <bookmark id="2">
                 <name/>
-                <line>315</line>
+                <line>339</line>
                 <key/>
             </bookmark>
             <bookmark id="1">
                 <name/>
-                <line>340</line>
+                <line>364</line>
                 <key/>
             </bookmark>
         </file>
@@ -18,7 +18,7 @@
             <url>scripts/display.canvas.js</url>
             <bookmark id="3">
                 <name/>
-                <line>151</line>
+                <line>150</line>
                 <key/>
             </bookmark>
         </file>
