@@ -2,7 +2,7 @@ jewel.display = (function() {
     var dom = jewel.dom,
         $ = dom.$,
         canvas, ctx,
-        cols, rows,
+     //   cols, rows,
         marioSize,
         jewels,
         width,
@@ -79,16 +79,13 @@ jewel.display = (function() {
 
     function setup() {
         var boardElement = $("#game-screen .game-board")[0];
-
-        cols = jewel.settings.cols;
-        rows = jewel.settings.rows;
-        marioSize = jewel.settings.marioSize;
-
+        var rect = $("#game .background")[0].getBoundingClientRect();
+         
         canvas = document.createElement("canvas");
         ctx = canvas.getContext("2d");
         dom.addClass(canvas, "board");
-        canvas.width = cols * marioSize;
-        canvas.height = rows * marioSize;
+        canvas.width = rect.width;
+        canvas.height = rect.height;
 
         boardElement.appendChild(canvas);
         boardElement.appendChild(createBackground());
@@ -153,32 +150,7 @@ jewel.display = (function() {
         , player.height, player.X, player.Y, player.width, player.height);
     }
 
-    function playAgain( againBtn )
-    {
-      //  var againBtn.image = jewel.images["images/angel.png"];
-       ctx.drawImage( againBtn.image, 0, againBtn.height * againBtn.actualFrame, againBtn.width
-        , againBtn.height, againBtn.X, againBtn.height, againBtn.width, againBtn.height);
-    }  // coordinate has wired problem
-//
-//    function gameOver( points, width, height, againBtn )
-//    {
-//        clear();
-//        ctx.fillStyle = "Black";
-//        ctx.font = "10pt Arial";
-//        ctx.fillText("GAME OVER", width / 2 - 60, height / 2 - 50);
-//        ctx.fillText("YOUR RESULT:" + points, width / 2 - 60, height / 2 - 30);             
-//        playAgain( againBtn );
-//    }
-    
     function redraw( circles, platforms, player, callback) {
-//        var x, y;
-//        jewels = newJewels;
-//        ctx.clearRect(0,0,canvas.width,canvas.height);
-//        for (x = 0; x < cols; x++) {
-//            for (y = 0; y < rows; y++) {
-//                drawJewel(jewels[x][y], x, y);
-//            }
-//        }
         clear();
         drawCircles( circles );
         drawPlatforms( platforms );

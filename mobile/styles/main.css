@@ -14,7 +14,7 @@ body {
     font-size : 40px;
     width : 8em;
     height : 12em;
-    background-color : rgb(30,30,30);
+    background-color : rgb(130,30,30);
     font-family : Geo;
     color : rgb(200,200,100);
 }
@@ -43,11 +43,6 @@ body {
     display : block;
 }
 
-#game-over {
-    text-align : center;
-    padding-top : 2.5em;
-}
-
 #splash-screen {
     text-align : center;
     padding-top : 2.5em;
@@ -61,11 +56,11 @@ body {
     font-family : Slackey;
     margin : 0;
     text-align : center;
-    color : rgb(70,120,20);
+    color : rgb(230,230,230);
     font-size : 1.5em;
     line-height : 0.9em;
-    text-shadow : 0.03em  0.03em  0.03em rgb(255,255,0),
-                 -0.03em -0.03em  0.03em rgb(255,255,0),
+    text-shadow : 0.03em  0.03em  0.03em rgb(220,0,0),
+                 -0.03em -0.03em  0.03em rgb(220,0,0),
                   0.10em  0.15em  0.15em rgb(0,0,0);
 }
 
@@ -93,7 +88,7 @@ ul.menu li {
 ul.menu li button {
     font-family : Slackey, sans-serif;
     font-size : 0.6em;
-    color : rgb(100,120,0);
+    color : rgb(130,30,30);
     width : 10em;
     height : 1.5em;
     background : rgb(10,20,0);
@@ -201,8 +196,13 @@ ul.menu li button:active {
 }
 
 /* Game over styles */
-#game-over.menu {
-    padding-top : 1em;
+#game-over {
+    text-align : center;
+    padding-top : 0.7em;
+}
+
+#game-over .menu {
+    padding-top : 0.1em;
     text-align : center;
 }
 

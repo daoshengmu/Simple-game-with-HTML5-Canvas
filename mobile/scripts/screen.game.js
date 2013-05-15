@@ -263,8 +263,7 @@ jewel.screens["game-screen"] = (function() {
                 circles[i][1] += deltaY;
             }
         }
-    }
-    ;
+    };
 
     function setupCircles()
     {
@@ -291,21 +290,12 @@ jewel.screens["game-screen"] = (function() {
                 circles[i][1] += deltaY;
             }
         }
-    }
-    ;
+    };
 
     function detectPlayAgin()
     {       
-        jewel.game.showScreen("game-over", points );      
-        
-      //  var end = jewel.screens["game-screen"];
-     //   end.gamePoints( points );
-        if (state === false)  // game over
-        {
-            //    var x = click.clientX;
-            //   var y = click.clientY;
-        }
-    }
+        jewel.game.showScreen("game-over", points );           
+    };
 
     function gameOver() {
         state = false;
@@ -316,7 +306,6 @@ jewel.screens["game-screen"] = (function() {
         }, 100);
 
     }
-    ;
 
     var gameUpdate = function() {
         //  function gameUpdate() {

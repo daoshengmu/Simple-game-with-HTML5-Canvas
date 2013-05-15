@@ -102,6 +102,7 @@ if (Modernizr.standalone) {
             "loader!scripts/screen.main-menu.js",
             "loader!scripts/screen.game.js",
             "loader!scripts/screen.gameover.js",
+            "loader!scripts/screen.about.js",
             "loader!images/jewels"
                 + jewel.settings.marioSize + ".png",
             "loader!images/angel.png"
