@@ -2,7 +2,7 @@ jewel.display = (function() {
     var dom = jewel.dom,
         $ = dom.$,
         cols, rows,
-        marioSize,
+    //    marioSize,
         firstRun = true,
         jewelSprites;
 
@@ -29,28 +29,28 @@ jewel.display = (function() {
             sprite,
             x, y;
 
-        cols = jewel.settings.cols;
-        rows = jewel.settings.rows;
-        marioSize = jewel.settings.marioSize;
-        jewelSprites = [];
-
-        for (x=0;x<cols;x++) {
-            jewelSprites[x] = [];
-            for (y=0;y<cols;y++) {
-                sprite = document.createElement("div");
-                dom.addClass(sprite, "jewel");
-                sprite.style.left = x + "em";
-                sprite.style.top = y + "em";
-                sprite.style.backgroundImage =
-                    "url(images/jewels" + marioSize + ".png)";
-                sprite.style.backgroundSize =
-                     (jewel.settings.numJewelTypes * 100) + "%";
-                jewelSprites[x][y] = sprite;
-                container.appendChild(sprite);
-            }
-        }
-        dom.addClass(container, "dom-container");
-        boardElement.appendChild(container);
+//        cols = jewel.settings.cols;
+//        rows = jewel.settings.rows;
+//        marioSize = jewel.settings.marioSize;
+//        jewelSprites = [];
+//
+//        for (x=0;x<cols;x++) {
+//            jewelSprites[x] = [];
+//            for (y=0;y<cols;y++) {
+//                sprite = document.createElement("div");
+//                dom.addClass(sprite, "jewel");
+//                sprite.style.left = x + "em";
+//                sprite.style.top = y + "em";
+//                sprite.style.backgroundImage =
+//                    "url(images/jewels" + marioSize + ".png)";
+//                sprite.style.backgroundSize =
+//                     (jewel.settings.numJewelTypes * 100) + "%";
+//                jewelSprites[x][y] = sprite;
+//                container.appendChild(sprite);
+//            }
+//        }
+//        dom.addClass(container, "dom-container");
+//        boardElement.appendChild(container);
         boardElement.appendChild(createBackground());
     }
 
@@ -62,24 +62,24 @@ jewel.display = (function() {
         callback();
     }
 
-    function drawJewel(type, x, y) {
-        var sprite = jewelSprites[x][y];
-        sprite.style.backgroundPosition = type + "em 0em";
-        sprite.style.display = "block";
-    }
+//    function drawJewel(type, x, y) {
+//        var sprite = jewelSprites[x][y];
+//        sprite.style.backgroundPosition = type + "em 0em";
+//        sprite.style.display = "block";
+//    }
 
-    function redraw(jewels, callback) {
-        var x, y;
-        for (x = 0; x < cols; x++) {
-            for (y = 0; y < rows; y++) {
-                drawJewel(jewels[x][y], x, y, 0, 0)
-            }
-        }
-        callback();
-    }
+//    function redraw(jewels, callback) {
+//        var x, y;
+//        for (x = 0; x < cols; x++) {
+//            for (y = 0; y < rows; y++) {
+//                drawJewel(jewels[x][y], x, y, 0, 0)
+//            }
+//        }
+//        callback();
+//    }
 
     return {
         initialize : initialize,
-        redraw : redraw
+    //    redraw : redraw
     };
 })();

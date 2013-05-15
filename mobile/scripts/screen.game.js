@@ -4,11 +4,13 @@ jewel.screens["game-screen"] = (function() {
             circles = [],
             nrOfPlatforms = 7,
             platforms = [],
-            platformWidth = 70,
-            platformHeight = 20,
+            platformWidth = jewel.settings.platformWidth,
+            platformHeight = jewel.settings.platformHeight,
             points = 0,
             howManyCircles = 10,
             mouseX, mouseY,
+            marioWidth = jewel.settings.marioWidth,
+            marioHeight = jewel.settings.marioHeight,
             gLoop,
             state = true,
             //canvas = document.createElement("canvas");
@@ -31,12 +33,7 @@ jewel.screens["game-screen"] = (function() {
         }
     }
 
-    if (window.DeviceMotionEvent == undefined)
-    {
-//    	document.getElementById("no").style.display="block";
-//    	document.getElementById("yes").style.display="none";
-
-        document.onmousemove = function(e) {
+    window.onmousemove = function(e) {
             mouseX = e.pageX;
             mouseY = e.pageY;
             if (player.X > mouseX) {
@@ -45,20 +42,49 @@ jewel.screens["game-screen"] = (function() {
                 player.moveRight();
             }
         };
-
-
+        
+    if (window.DeviceOrientationEvent) { 
+        window.addEventListener("deviceorientation", function () {
+         //   tilt([event.beta, event.gamma]);
+         player.moveAccMove(event.gamma);
+        }, true);
+    } else if (window.DeviceMotionEvent) {
+        window.addEventListener('devicemotion', function () {
+         //   tilt([event.acceleration.x * 2, event.acceleration.y * 2]);
+         player.moveAccMove(event.acceleration.x);
+        }, true);
+    } else {
+        window.addEventListener("MozOrientation", function () {
+        //    tilt([orientation.x * 50, orientation.y * 50]);
+            player.moveAccMove(orientation.x);
+        }, true);
     }
-    else
-    {
-        window.ondevicemotion = function(event)
-        {
-            var ax = event.accelerationIncludingGravity.x;  // -10 ~ +10
-            //ay = event.accelerationIncludingGravity.y;
 
-            player.moveAccMove(ax);
-
-        };
-    }
+//    if (window.DeviceMotionEvent == undefined)
+//    {
+//        document.onmousemove = function(e) {
+//            mouseX = e.pageX;
+//            mouseY = e.pageY;
+//            if (player.X > mouseX) {
+//                player.moveLeft();
+//            } else if (player.X < mouseX) {
+//                player.moveRight();
+//            }
+//        };
+//
+//
+//    }
+//    else
+//    {
+//        window.ondevicemotion = function(event)
+//        {
+//            var ax = event.accelerationIncludingGravity.x;  // -10 ~ +10
+//            //ay = event.accelerationIncludingGravity.y;
+//
+//            player.moveAccMove(ax);
+//
+//        };
+//    }
 
     var Platform = function(x, y, type) {
         var that = this;
@@ -121,8 +147,8 @@ jewel.screens["game-screen"] = (function() {
         var that = this;
         //    that.image = new Image();     
         //  that.image.src = "angel.png";
-        that.width = 65;
-        that.height = 95;
+        that.width = marioWidth;  // 65
+        that.height = marioHeight;  // 95
         that.frames = 1;
         that.actualFrame = 0;
         that.X = 0;

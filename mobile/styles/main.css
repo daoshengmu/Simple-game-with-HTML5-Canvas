@@ -25,11 +25,18 @@ body {
 
 #mario-proto {
     position : absolute;
-    width : 1em;
-    height : 1em;
-    left : -1000px;
+    width : 1.625em;
+    height : 2.375em;    
 }
 
+.platform-size {
+    font-size : 40px;
+}
+
+#platform-proto {
+    width : 1.75em;
+    height : 0.5em;
+}
 
 #game .screen {
     position : absolute;
@@ -204,6 +211,15 @@ ul.menu li button:active {
 #game-over .menu {
     padding-top : 0.1em;
     text-align : center;
+}
+
+/* about styles */
+#about {
+    text-align : center;
+    padding-top : 0.7em;
+}
+#about .menu {
+    font-size : 0.75em; 
 }
 
 ul.menu li {

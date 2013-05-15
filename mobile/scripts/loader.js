@@ -12,11 +12,17 @@ var jewel = {
 window.addEventListener("load", function() {
 
 // determine jewel size
-var jewelProto = document.getElementById("mario-proto"),
-    rect = jewelProto.getBoundingClientRect();
+var marioProto = document.getElementById("mario-proto"),
+    rect = marioProto.getBoundingClientRect();
+    
+var platformSize = document.getElementById("platform-proto"),
+    platform = platformSize.getBoundingClientRect();
 
-jewel.settings.marioSize = rect.width;
+jewel.settings.marioWidth = rect.width;
+jewel.settings.marioHeight = rect.height;
 
+jewel.settings.platformWidth = platform.width;
+jewel.settings.platformHeight = platform.height;
 
 Modernizr.addTest("standalone", function() {
     return (window.navigator.standalone != false);
@@ -88,8 +94,8 @@ if (Modernizr.standalone) {
     Modernizr.load([
     {
         test : Modernizr.canvas,
-        yep : "loader!scripts/display.canvas.js",
-        nope : "loader!scripts/display.dom.js"
+        yep : "loader!scripts/display.canvas.js"//,
+      //  nope : "loader!scripts/display.dom.js"
     },{
         test : Modernizr.webworkers,
         yep : [
@@ -103,8 +109,8 @@ if (Modernizr.standalone) {
             "loader!scripts/screen.game.js",
             "loader!scripts/screen.gameover.js",
             "loader!scripts/screen.about.js",
-            "loader!images/jewels"
-                + jewel.settings.marioSize + ".png",
+        //    "loader!images/jewels"
+         //       + jewel.settings.marioSize + ".png",
             "loader!images/angel.png"
         ]
     }

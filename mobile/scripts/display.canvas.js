@@ -2,11 +2,10 @@ jewel.display = (function() {
     var dom = jewel.dom,
         $ = dom.$,
         canvas, ctx,
-     //   cols, rows,
-        marioSize,
-        jewels,
-        width,
-        height,
+     //   cols, rows,        
+     //   jewels,
+    //    width,
+     //   height,
         cursor,
         firstRun = true;
 
