@@ -145,8 +145,8 @@ jewel.display = (function() {
     {
        // var image = jewel.images["images/angel.png"];
         
-        ctx.drawImage( player.image, 0, player.height * player.actualFrame, player.width
-        , player.height, player.X, player.Y, player.width, player.height);
+        ctx.drawImage( player.image, 0, player.height * player.actualFrame, player.imageWidth
+        , player.imageHeight, player.X, player.Y, player.width, player.height);
     }
 
     function redraw( circles, platforms, player, callback) {

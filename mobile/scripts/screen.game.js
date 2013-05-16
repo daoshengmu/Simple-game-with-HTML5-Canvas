@@ -148,6 +148,8 @@ jewel.screens["game-screen"] = (function() {
         that.width = marioWidth;  // 65
         that.height = marioHeight;  // 95
         that.frames = 1;
+        that.imageWidth = 65;
+        that.imageHeight = 95;
         that.actualFrame = 0;
         that.X = 0;
         that.Y = 0;
@@ -251,26 +253,26 @@ jewel.screens["game-screen"] = (function() {
             that.Y = y;
         };
 
-        that.interval = 0;
-        that.draw = function() {
-            try {
-                ctx.drawImage(that.image, 0, that.height * that.actualFrame, that.width, that.height, that.X, that.Y, that.width, that.height);
-            }
-            catch (e) {
-            }
-            ;
-
-            if (that.interval === 4) {
-                if (that.actualFrame === that.frames) {
-                    that.actualFrame = 0;
-                }
-                else {
-                    that.actualFrame++;
-                }
-                that.interval = 0;
-            }
-            that.interval++;
-        };
+//        that.interval = 0;
+//        that.draw = function() {
+//            try {
+//                ctx.drawImage(that.image, 0, that.height * that.actualFrame, that.width, that.height, that.X, that.Y, that.width, that.height);
+//            }
+//            catch (e) {
+//            }
+//            ;
+//
+//            if (that.interval === 4) {
+//                if (that.actualFrame === that.frames) {
+//                    that.actualFrame = 0;
+//                }
+//                else {
+//                    that.actualFrame++;
+//                }
+//                that.interval = 0;
+//            }
+//            that.interval++;
+//        };
     })();
 
     function MoveCircles(deltaY) {

@@ -24,7 +24,7 @@ body {
 }
 
 #mario-proto {
-    position : absolute;
+    position : relative;
     width : 1.625em;
     height : 2.375em;    
 }
