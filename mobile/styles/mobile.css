@@ -19,8 +19,12 @@
         margin : 0.75em;
     }
     .mario-size {
-        font-size : 80px;
+        font-size : 40px;   /*80*/
     }
+    
+    .platform-size {
+    	    font-size : 80px;
+		}
 }
 
 /* smartphones landscape */
@@ -63,6 +67,10 @@
         margin : 0.25em;
     }
     .mario-size {
-        font-size : 64px;
+        font-size : 40px;  /*64*/
     }
+    
+     .platform-size {
+		    font-size : 64px;
+		}
 }
